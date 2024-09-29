@@ -10,7 +10,6 @@ function App() {
     <div className='relative w-[100%] h-[100%] bg-zinc-900'>
       <img src={Img} alt="My Example" className='w-[100%] h-[45%]' />
       
-      {/* Card posicionado sobre a imagem */}
       
         <Card />
      

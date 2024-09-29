@@ -181,30 +181,27 @@ const Card = () => {
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input
                           type="checkbox"
-                          className="sr-only" // Oculta o checkbox padrão
+                          className="sr-only" 
                           checked={task.finalizada}
                           onChange={() => handleToggleFinalizada(task.task_id, task.finalizada)}
                         />
                         <div className="w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center transition-all duration-300">
                           {task.finalizada && (
-                            <GoCheck className="w-4 h-4 text-white" /> // Use o GoCheck aqui
+                            <GoCheck className="w-4 h-4 text-white" /> 
                           )}
                         </div>
                       </label>
                       <span>{task.title}</span>
                     </div>
 
-                    {/* Ícone de opções para mostrar/ocultar botões */}
                     <SlOptionsVertical onClick={(e) => { e.stopPropagation(); setActiveTaskId(task.task_id); }} />
                   </div>
 
                   <br />
                   <p>{task.description}</p>
 
-                  {/* Renderiza os botões de "Editar" e "Excluir" apenas para a task ativa */}
                   {activeTaskId === task.task_id && (
                     <div className="flex justify-end space-x-2 mt-2">
-                      <button className="bg-blue-500 text-white py-1 px-3 rounded-md">Editar</button>
                       <button on onClick={() => handleToggleDelete(task.task_id)} className="bg-red-500 text-white py-1 px-3 rounded-md">Excluir</button>
                     </div>
                   )}
